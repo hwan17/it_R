@@ -155,6 +155,10 @@ m <- lm(input~cost, data = ad)
 m
 abline(m, col='red')
 
+
+
+
+
 title(expression(italic(paste( '¸ÅÃâ=', round(m$coefficients[2], 4), "* ±¤°íºñ + ", round(m$coefficients[1], 4)))))
 y_hat <- predict(m, cost=cost)
 y_hat
