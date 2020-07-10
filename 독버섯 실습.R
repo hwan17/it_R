@@ -1,0 +1,10 @@
+setwd("d:\\data\\csv")
+mush <- read.csv("mushroomse.csv",stringsAsFactors = T)
+str(mush)
+library(adabag)
+set.seed(300)
+m_adaboost <- boosting(type~., data=mush)
+p_adaboost <- predict(m_adaboost, mush)
+head(p_adaboost$class)
+p_adaboost$confusion
+table(p_adaboost$class, mush$type)
